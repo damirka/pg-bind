@@ -1,0 +1,44 @@
+{
+  "name": "pg-bind",
+  "version": "1.0.0",
+  "description": "Util for binding PostgreSQL queries in NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "docs": "jsdoc -c .jsdocrc",
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/damirka/pg-bind.git"
+  },
+  "keywords": [
+    "pg",
+    "postgresql",
+    "postgres",
+    "psql",
+    "prepare",
+    "bind",
+    "bindquery",
+    "query",
+    "bindquery",
+    "insert",
+    "update",
+    "select",
+    "sql",
+    "pgbind",
+    "sqlquery",
+    "node-postgres",
+    "node-pg"
+  ],
+  "author": "Damir Shamanaev <damirka.ru@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/damirka/pg-bind/issues"
+  },
+  "homepage": "https://github.com/damirka/pg-bind#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "jsdoc": "^3.5.5",
+    "mocha": "^5.2.0"
+  }
+}
