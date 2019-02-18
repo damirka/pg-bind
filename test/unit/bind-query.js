@@ -21,9 +21,22 @@ describe('pg-bind~bindQuery', function () {
 
     it('should bind object properly and keep the casts', function () {
 
-        const query    = "SELECT ':a'::int, ':b'::text";
-        const expected = "SELECT '$1'::int, '$2'::text";
+        const query    = 'SELECT :a::int, :b::text';
+        const expected = 'SELECT $1::int, $2::text';
         const obj      = {b: 2, a: 1};
+        const result   = bind(query, obj);
+
+        assert(result.values[0] === obj.a, 'First property must match');
+        assert(result.values[1] === obj.b, 'Second property must match');
+        assert(result.values.length === 2, 'Only two values must be passed');
+        assert(result.text === expected,   'Query must match expected one');
+    });
+
+    it('should re-bind already bound parameter when same name used more than once', function () {
+
+        const query    = 'SELECT :a::int, :a::text, :b::text, :a::int';
+        const expected = 'SELECT $1::int, $1::text, $2::text, $1::int';
+        const obj      = {a: 1, b: 2};
         const result   = bind(query, obj);
 
         assert(result.values[0] === obj.a, 'First property must match');

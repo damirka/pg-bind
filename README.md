@@ -157,10 +157,19 @@ To generate documentation (and open it) run:
 
 ```bash
 npm run docs                          # just generate docs
-npm run docs && open docs/index.html  # gen and open docs in default application for HTML
+npm run docs && open docs/index.html  # generate and open docs in default application for HTML ext
 ```
 
 <a name="tests"></a>
+
+## Coverage
+
+To generate coverage report (and open it) run:
+
+```bash
+npm run coverage                              # generate report
+npm run coverare && open coverage/index.html  # generate and open in default application for HTML ext
+```
 
 ## Tests
 
