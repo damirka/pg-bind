@@ -82,7 +82,7 @@ function bindInsertQuery(queryString, replacementsArr = []) {
 
     // Whether it's not an array -> do regular bind with single value
     if (!Array.isArray(replacementsArr)) {
-        return exports.bindQuery(queryString, replacementsArr);
+        return bindQuery(queryString, replacementsArr);
     }
 
     // Initialize regular expressions to find VALUES (<pattern>)
@@ -124,7 +124,7 @@ function bindInsertQuery(queryString, replacementsArr = []) {
     // Iterate through replacements to bind each one as regular query
     for (let replacement of replacementsArr) {
 
-        let query = exports.bindQuery(bindPattern, replacement, index);
+        let query = bindQuery(bindPattern, replacement, index);
 
         patterns.push('(' + query.text + ')');
         values = values.concat(query.values);

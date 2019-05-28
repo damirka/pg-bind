@@ -1,6 +1,6 @@
 {
   "name": "pg-bind",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Util for binding PostgreSQL queries in NodeJS",
   "main": "index.js",
   "scripts": {
